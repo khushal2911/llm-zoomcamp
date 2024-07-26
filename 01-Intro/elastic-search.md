@@ -1,4 +1,4 @@
-Run Following docker container to host elasticsearch and forward ports 9200 and 9300 if not done automatically.
+Run Following docker container to host elasticsearch and forward ports 9200 and 9300 if not done automatically. JAVA OPTS is necessary when es exits unexpectedly.
 
 docker run -it \
     --rm \
