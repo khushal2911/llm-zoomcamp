@@ -93,7 +93,7 @@ def ingest_api_data(*args, **kwargs) -> List[Dict]:
     """
 
     faq_documents = {
-        'llm-zoomcamp': '1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E',
+        'llm-zoomcamp': file_id,
     }
 
     documents = []

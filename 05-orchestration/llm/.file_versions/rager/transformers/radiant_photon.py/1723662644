@@ -1,0 +1,20 @@
+import hashlib
+
+import re
+from typing import Any, Dict, List
+
+
+@transformer
+def chunk_documents(data: List[Dict[str, Any]], *args, **kwargs):
+   
+    documents = []
+
+    for doc in data['documents']:
+        doc['course'] = data['course']
+        # previously we used just "id" for document ID
+        doc['document_id'] = generate_document_id(doc)
+        documents.append(doc)
+
+    print(len(documents))
+
+    return documents

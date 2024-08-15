@@ -85,15 +85,28 @@ def ingest_api_data(*args, **kwargs) -> List[Dict]:
         auth_token (str): Authentication token for the API.
         method (str): HTTP method to use (GET, POST, etc.).
         timeout (int): Request timeout in seconds.
-    
+    """
     file_id = kwargs.get('endpoint')
     auth_token = kwargs.get('auth_token')
     method = kwargs.get('method', 'GET')
     timeout = kwargs.get('timeout', 30)
-    """
+
+    url = f'https://docs.google.com/document/d/{file_id}/export?format=docx'
+
+    headers = {}
+    if auth_token:
+        headers['Authorization'] = f"Bearer {auth_token}"
+
+    response = requests.request(
+        method=method,
+        url=file_id or  '',
+        headers=headers,
+        timeout=timeout
+    )
+    response.raise_for_status()
 
     faq_documents = {
-        'llm-zoomcamp': '1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E',
+        'llm-zoomcamp': file_id,
     }
 
     documents = []
@@ -103,7 +116,7 @@ def ingest_api_data(*args, **kwargs) -> List[Dict]:
         course_documents = read_faq(file_id)
         documents.append({'course': course, 'documents': course_documents})
 
-    return documents
+    return [response.json()]
 
 
 @test

@@ -85,15 +85,15 @@ def ingest_api_data(*args, **kwargs) -> List[Dict]:
         auth_token (str): Authentication token for the API.
         method (str): HTTP method to use (GET, POST, etc.).
         timeout (int): Request timeout in seconds.
-    
+    """
     file_id = kwargs.get('endpoint')
     auth_token = kwargs.get('auth_token')
     method = kwargs.get('method', 'GET')
     timeout = kwargs.get('timeout', 30)
-    """
+
 
     faq_documents = {
-        'llm-zoomcamp': '1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E',
+        'llm-zoomcamp': file_id,
     }
 
     documents = []

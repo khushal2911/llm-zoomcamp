@@ -101,7 +101,7 @@ def ingest_api_data(*args, **kwargs) -> List[Dict]:
     for course, file_id in faq_documents.items():
         #print(course)
         course_documents = read_faq(file_id)
-        documents.append({'course': course, 'documents': course_documents})
+        documents.append(course_documents)
 
     return documents
 

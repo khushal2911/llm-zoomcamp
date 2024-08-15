@@ -1,0 +1,3 @@
+mage version - 0.9.72
+only one FAQ document was processed
+There are 86 chunks in the output

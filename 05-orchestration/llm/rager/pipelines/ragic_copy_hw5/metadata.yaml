@@ -6,19 +6,20 @@ blocks:
       content: null
       extension: py
       language: python
-      modified_timestamp: 1723661053
+      modified_timestamp: 1723652690
       name: runic_oblivion.py
       output: null
       path: /home/src/llm/rager/data_loaders/runic_oblivion.py
       relative_path: llm/rager/data_loaders/runic_oblivion.py
-      size: 3119
+      size: 1406
+    file_path: rager/data_loaders/runic_oblivion_copy.py
     file_source:
-      path: rager/data_loaders/runic_oblivion.py
+      path: rager/data_loaders/runic_oblivion_copy.py
     templates:
       api:
         variables:
           auth_token: null
-          endpoint: https://raw.githubusercontent.com/DataTalksClub/llm-zoomcamp/main/01-intro/documents.json
+          endpoint: https://docs.google.com/document/d/1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E
           method: GET
           timeout: 30
   downstream_blocks: []
@@ -28,18 +29,19 @@ blocks:
   - ingest
   has_callback: false
   language: python
-  name: Runic oblivion
+  name: Runic oblivion_copy
   retry_config: null
-  status: not_executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: runic_oblivion
+  uuid: runic_oblivion_copy
 - all_upstream_blocks_executed: true
   color: null
   configuration:
+    file_path: rager/transformers/radiant_photon_copy.py
     file_source:
-      path: rager/transformers/radiant_photon.py
+      path: rager/transformers/radiant_photon_copy.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -47,13 +49,13 @@ blocks:
   - chunking
   has_callback: false
   language: python
-  name: Radiant photon
+  name: Radiant photon_copy
   retry_config: null
-  status: not_executed
+  status: failed
   timeout: null
   type: transformer
   upstream_blocks: []
-  uuid: radiant_photon
+  uuid: radiant_photon_copy
 - all_upstream_blocks_executed: true
   color: null
   configuration:
@@ -147,12 +149,11 @@ conditionals: []
 created_at: '2024-07-28 06:46:55.938489+00:00'
 data_integration: null
 description: null
-execution_framework: rag
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: RAGic
+name: ragic_copy_hw5
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -162,6 +163,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: ragic
+uuid: ragic_copy_hw5
 variables_dir: /home/src/mage_data/rager
 widgets: []
