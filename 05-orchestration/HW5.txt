@@ -1,3 +1,17 @@
-mage version - 0.9.72
-only one FAQ document was processed
-There are 86 chunks in the output
+Q1. A: mage version - 0.9.72
+Q2. document_ID : 1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E
+    A: only one FAQ document was processed
+Q3. A: There are 86 chunks in the output
+Q4. A:
+index name: documents_20240816_2141
+
+Last Indexing document 6fc3236a
+
+{'text': 'Using the Openai API does not cost much, you can recharge from 5 dollars. At least for what I spent on the first unit it was barely 5 cents.', 'section': 'Module 1: Introduction', 'question': 'OpenAI: How much will I have to spend to use the Open AI API?', 'course': 'llm-zoomcamp', 'document_id': '6fc3236a'}
+
+index_name = documents_20240816_1046
+
+Q5. A : Top matching result ID = bf024675
+Q6. document_ID : 1T3MdwUvqCL3jrh3d3VCXQ8xE0UqRzI3bfgpfBq3ZWG0
+    index_name = documents_20240816_3701
+    A : b6fa77f3

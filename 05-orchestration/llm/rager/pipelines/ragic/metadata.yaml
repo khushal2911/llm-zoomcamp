@@ -109,18 +109,18 @@ blocks:
       content: null
       extension: py
       language: python
-      modified_timestamp: 1722154146
+      modified_timestamp: 1723652690
       name: numinous_fission.py
       output: null
-      path: /home/src/default_repo/llm/rager/data_exporters/numinous_fission.py
+      path: /home/src/llm/rager/data_exporters/numinous_fission.py
       relative_path: llm/rager/data_exporters/numinous_fission.py
-      size: 2054
+      size: 2087
     file_source:
       path: rager/data_exporters/numinous_fission.py
     templates:
       elasticsearch:
         variables:
-          connection_string: http://host.docker.internal:9200
+          connection_string: http://elasticsearch:9200
           dimensions: null
           index_name: documents
           number_of_replicas: 0
@@ -140,6 +140,63 @@ blocks:
   type: data_exporter
   upstream_blocks: []
   uuid: numinous_fission
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/data_loaders/plasmatic_phantom.py
+  downstream_blocks:
+  - nebulous_warp
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - iterative_retrieval
+  has_callback: false
+  language: python
+  name: Plasmatic phantom
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: plasmatic_phantom
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file:
+      content: null
+      extension: py
+      language: python
+      modified_timestamp: 1723803602
+      name: nebulous_warp.py
+      output: null
+      path: /home/src/llm/rager/data_loaders/nebulous_warp.py
+      relative_path: llm/rager/data_loaders/nebulous_warp.py
+      size: 5838
+    file_source:
+      path: rager/data_loaders/nebulous_warp.py
+    templates:
+      elasticsearch:
+        variables:
+          chunk_column: chunk
+          connection_string: http://elasticsearch:9200
+          index_name: documents
+          vector_column_name: embedding
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - iterative_retrieval
+  has_callback: false
+  language: python
+  name: Nebulous warp
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - plasmatic_phantom
+  uuid: nebulous_warp
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

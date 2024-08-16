@@ -2,26 +2,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration:
-    file:
-      content: null
-      extension: py
-      language: python
-      modified_timestamp: 1723652690
-      name: runic_oblivion.py
-      output: null
-      path: /home/src/llm/rager/data_loaders/runic_oblivion.py
-      relative_path: llm/rager/data_loaders/runic_oblivion.py
-      size: 1406
-    file_path: rager/data_loaders/runic_oblivion_copy.py
     file_source:
-      path: rager/data_loaders/runic_oblivion_copy.py
-    templates:
-      api:
-        variables:
-          auth_token: null
-          endpoint: https://docs.google.com/document/d/1qZjwHkvP0lXHiE4zdbWyUXSVfmVGzougDD6N37bat3E
-          method: GET
-          timeout: 30
+      path: rager/data_loaders/eldritch_phantasm.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -29,19 +11,18 @@ blocks:
   - ingest
   has_callback: false
   language: python
-  name: Runic oblivion_copy
+  name: Eldritch phantasm
   retry_config: null
-  status: executed
+  status: not_executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: runic_oblivion_copy
+  uuid: eldritch_phantasm
 - all_upstream_blocks_executed: true
   color: null
   configuration:
-    file_path: rager/transformers/radiant_photon_copy.py
     file_source:
-      path: rager/transformers/radiant_photon_copy.py
+      path: rager/transformers/mystic_hologram.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -49,24 +30,18 @@ blocks:
   - chunking
   has_callback: false
   language: python
-  name: Radiant photon_copy
+  name: Mystic hologram
   retry_config: null
-  status: failed
+  status: not_executed
   timeout: null
   type: transformer
   upstream_blocks: []
-  uuid: radiant_photon_copy
+  uuid: mystic_hologram
 - all_upstream_blocks_executed: true
   color: null
   configuration:
     file_source:
-      path: rager/transformers/vivid_nexus.py
-    templates:
-      lemmatization_spacy:
-        variables:
-          handle_stopwords: false
-          language: en
-          use_pos_tags: true
+      path: rager/transformers/transcendent_dimension.py
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -74,36 +49,13 @@ blocks:
   - tokenization
   has_callback: false
   language: python
-  name: Vivid nexus
+  name: Transcendent dimension
   retry_config: null
   status: not_executed
   timeout: null
   type: transformer
   upstream_blocks: []
-  uuid: vivid_nexus
-- all_upstream_blocks_executed: true
-  color: null
-  configuration:
-    file_source:
-      path: rager/transformers/prismatic_axiom.py
-    templates:
-      spacy_embeddings:
-        variables:
-          model_name: en_core_web_sm
-  downstream_blocks: []
-  executor_config: null
-  executor_type: local_python
-  groups:
-  - embed
-  has_callback: false
-  language: python
-  name: Prismatic axiom
-  retry_config: null
-  status: not_executed
-  timeout: null
-  type: transformer
-  upstream_blocks: []
-  uuid: prismatic_axiom
+  uuid: transcendent_dimension
 - all_upstream_blocks_executed: true
   color: null
   configuration:
@@ -111,23 +63,23 @@ blocks:
       content: null
       extension: py
       language: python
-      modified_timestamp: 1722154146
-      name: numinous_fission.py
+      modified_timestamp: 1723806948
+      name: meteoric_conduit.py
       output: null
-      path: /home/src/default_repo/llm/rager/data_exporters/numinous_fission.py
-      relative_path: llm/rager/data_exporters/numinous_fission.py
-      size: 2054
+      path: /home/src/llm/rager/data_exporters/meteoric_conduit.py
+      relative_path: llm/rager/data_exporters/meteoric_conduit.py
+      size: 2479
     file_source:
-      path: rager/data_exporters/numinous_fission.py
+      path: rager/data_exporters/meteoric_conduit.py
     templates:
       elasticsearch:
         variables:
-          connection_string: http://host.docker.internal:9200
+          connection_string: http://elasticsearch:9200
           dimensions: null
           index_name: documents
           number_of_replicas: 0
           number_of_shards: 1
-          vector_column_name: embedding
+          vector_column_name: ''
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
@@ -135,25 +87,62 @@ blocks:
   - vector_database
   has_callback: false
   language: python
-  name: Numinous fission
+  name: Meteoric conduit
   retry_config: null
   status: not_executed
   timeout: null
   type: data_exporter
   upstream_blocks: []
-  uuid: numinous_fission
+  uuid: meteoric_conduit
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file:
+      content: null
+      extension: py
+      language: python
+      modified_timestamp: 1723814639
+      name: phosphorescent_mantra.py
+      output: null
+      path: /home/src/llm/rager/data_loaders/phosphorescent_mantra.py
+      relative_path: llm/rager/data_loaders/phosphorescent_mantra.py
+      size: 1752
+    file_source:
+      path: rager/data_loaders/phosphorescent_mantra.py
+    templates:
+      elasticsearch:
+        variables:
+          chunk_column: ''
+          connection_string: http://elasticsearch:9200
+          index_name: documents_20240816_2141
+          vector_column_name: ''
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - iterative_retrieval
+  has_callback: false
+  language: python
+  name: Phosphorescent mantra
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: phosphorescent_mantra
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-07-28 06:46:55.938489+00:00'
+created_at: '2024-08-16 10:43:57.924940+00:00'
 data_integration: null
 description: null
+execution_framework: rag
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: ragic_copy_hw5
+name: Galvanized omen
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -163,6 +152,8 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: ragic_copy_hw5
+uuid: galvanized_omen
+variables:
+  index_name: documents_20240816_3701
 variables_dir: /home/src/mage_data/rager
 widgets: []
